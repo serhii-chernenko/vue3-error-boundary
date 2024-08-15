@@ -25,7 +25,7 @@ const post = ref({
     <ErrorBoundary>
         <BlogPostComments />
         <template #error="{ error, clearError }">
-            <p class="pt-5 font-bold">⚠️ {{ error.message }}</p>
+            <p class="pt-5 font-bold">⚠️ {{ (error as Error).message }}</p>
             <button class="mt-2" @click="clearError">Try Again</button>
         </template>
     </ErrorBoundary>

@@ -42,13 +42,13 @@ await loadComments()
         <div v-if="loading" class="text-gray-400">Loading...</div>
         <ul class="space-y-4">
             <li
-                v-for="comment in comments"
-                :key="comment.id"
+                v-for="(comment, index) in comments"
+                :key="index"
                 class="p-4 rounded-lg shadow-md bg-base-100"
             >
-                <strong class="block text-lg font-semibold text-primary">{{
-                    comment.name
-                }}</strong>
+                <strong class="block text-lg font-semibold text-primary">
+                    {{ comment.name }}
+                </strong>
                 <p class="mt-2 text-base-content">{{ comment.body }}</p>
             </li>
         </ul>
